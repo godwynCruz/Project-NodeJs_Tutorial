@@ -1,0 +1,77 @@
+
+console.log(); // a global object, we can access this everywhere
+
+// for javascript
+setTimeout() //call a function after a delay
+clearTimeout(); 
+
+setInterval() //to repetitively call a function after a delay
+clearInterval() // to stop calling the function
+
+
+window //represents the global scope
+
+var message = "";
+
+window.message //javascript
+global // node js
+
+modularity - define variables in a different modules so if we define a same variable, it will not overwrite
+// every file here is considered as module
+// every node application has atleast 1 file called main module
+// every file is a module and has variables and functions defined are scope with that module. They are not available outside the module
+
+console.log(module) = not global
+
+require ('') = linking 1 module to another, to load a module
+module.exports = objects only.
+module.exports.url = for url
+can change the name
+module.exports.endPoint = url
+
+./ = current folder
+it can be ('./subFolder/logger') or ('../logger')
+
+if const = no matter what happens, the variable will stay because it is "constant"
+
+Module Wrapper Function = it wraps the module in (function (exports, require, module, __filename, __dirname) {code})
+template string = simplifing the expression using template string in javascript using ES6 or ES2015, ECMAScript
+template string= build a string without concatination
+callback = take a function at their last argument, node will call that function when asynchronus operation completes
+function can be replaced as "=>"
+method = when a function is inside a class
+
+Capitalizing the start indicates that it is a CLASS 
+
+Path module:
+const path = require('path');
+var pathObject = path.parse(__filename);
+
+console.log(pathObject);
+
+OS module:
+const os = require('node:os');
+
+var totalMemory = os.totalmem ();
+var freeMemory = os.freemem ();
+
+console.log('Total Memory: ' + totalMemory);
+console.log(`Free Memory: ${freeMemory}`);
+
+File System Module:
+const fs = require ('fs');
+
+Synchronus:
+var files = fs.readdirSync("./");
+console.log(files);
+
+asynchronus
+fs.readdir("./", function (err, files){
+    if (err) console.log("Error", err);
+    else console.log('Result', files);
+});
+
+Events Module:
+Events - node is based on this concept of Events
+ - a signal that something has happened on our application
+ - everytime you receive an request, it raises an EVENT
